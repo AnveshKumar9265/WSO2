@@ -1,0 +1,34 @@
+openapi: 3.0.1
+info:
+  title: CSVTransformer_API
+  description: API Definition of CSVTransformer_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/csv-transformer-api
+- url: https://localhost:8253/csv-transformer-api
+paths:
+  /csvFiletojson:
+    get:
+      responses:
+        default:
+          description: Default response
+  /json-csv:
+    post:
+      requestBody:
+        description: Sample Payload
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payload:
+                  type: object
+          application/xml:
+            schema:
+              type: object
+              xml:
+                name: payload
+        required: false
+      responses:
+        default:
+          description: Default response

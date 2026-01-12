@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/csv-transformer-api" name="CSVTransformer_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/csvFiletojson">
+        <inSequence>
+            <file.read configKey="mi-artifact-file-source">
+                <path>/csvreadGET/source.csv</path>
+                <filePattern></filePattern>
+                <readMode>Complete File</readMode>
+                <contentType>text/csv</contentType>
+                <encoding>UTF-8</encoding>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+                <maxRetries>0</maxRetries>
+                <retryDelay>0</retryDelay>
+                <fileFilterType>ant</fileFilterType>
+                <includeFiles></includeFiles>
+                <excludeFiles></excludeFiles>
+                <maxFileAge></maxFileAge>
+                <timeBetweenSizeCheck></timeBetweenSizeCheck>
+                <diskShareAccessMask>MAXIMUM_ALLOWED</diskShareAccessMask>
+                <responseVariable>file_read_1</responseVariable>
+                <overwriteBody>true</overwriteBody>
+            </file.read>
+            <log level="full"/>
+            <payloadFactory media-type="text">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="base64Decode($body//*[local-name()='binary'])"/>
+                </args>
+            </payloadFactory>
+             <log level="custom">
+                <property name="CSV_PAYLOAD" expression="$body"/>
+            </log>
+            <CSV.csvToJson>
+                <headerPresent>Present</headerPresent>
+                <valueSeparator></valueSeparator>
+                <skipHeader>false</skipHeader>
+                <columnsToSkip></columnsToSkip>
+                <dataRowsToSkip></dataRowsToSkip>
+                <csvEmptyValues>Null</csvEmptyValues>
+                <jsonKeys></jsonKeys>
+                <dataTypes></dataTypes>
+                <rootJsonKey></rootJsonKey>
+            </CSV.csvToJson>
+            <log level="full"/>
+            <property name="messageType" value="application/json" scope="axis2"/>
+            <property name="ContentType" value="application/json" scope="axis2"/>
+            <log level="custom">
+                <property name="JSON_BEFORE_WRITE" expression="json-eval($)"/>
+            </log>
+            <file.write configKey="mi-artifact-file-source">
+                <filePath>/csvreadGET/target.json</filePath>
+                <!-- <contentOrExpression></contentOrExpression> -->
+                <encoding>UTF-8</encoding>
+                <mimeType>application/json</mimeType>
+                <writeMode>Overwrite</writeMode>
+                <!-- <appendPosition>0</appendPosition> -->
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>false</appendNewLine>
+                <enableLock>false</enableLock>
+                <updateLastModified>true</updateLastModified>
+                <maxRetries>0</maxRetries>
+                <retryDelay>0</retryDelay>
+                <timeBetweenSizeCheck></timeBetweenSizeCheck>
+                <updateFilePermission></updateFilePermission>
+                <diskShareAccessMask>MAXIMUM_ALLOWED</diskShareAccessMask>
+                <responseVariable>file_write_1</responseVariable>
+                <overwriteBody>true</overwriteBody>
+            </file.write>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/json-csv">
+        <inSequence>
+            <log level="custom">
+                <property name="JSON_INPUT_PAYLOAD" expression="json-eval($)"/>
+            </log>
+            <CSV.jsonToCsv>
+                <customHeader></customHeader>
+                <suppressEscaping>false</suppressEscaping>
+                <customValueSeparator>,</customValueSeparator>
+            </CSV.jsonToCsv>
+            <log level="full"/>
+            <file.write configKey="mi-artifact-file-source">
+                <filePath>/csvreadGET/List.csv</filePath>
+                <contentOrExpression></contentOrExpression>
+                <encoding>UTF-8</encoding>
+                <mimeType>text/csv</mimeType>
+                <writeMode>Overwrite</writeMode>
+                <appendPosition>1</appendPosition>
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>true</appendNewLine>
+                <enableLock>false</enableLock>
+                <updateLastModified>true</updateLastModified>
+                <maxRetries>0</maxRetries>
+                <retryDelay>0</retryDelay>
+                <timeBetweenSizeCheck></timeBetweenSizeCheck>
+                <updateFilePermission></updateFilePermission>
+                <diskShareAccessMask>MAXIMUM_ALLOWED</diskShareAccessMask>
+                <responseVariable>file_write_1</responseVariable>
+                <overwriteBody>true</overwriteBody>
+            </file.write>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+</api>

@@ -1,0 +1,10 @@
+---
+key: "CSVTransformer_API-1.0.0"
+name : "CSVTransformer_API"
+displayName : "CSVTransformer_API"
+description: "CSVTransformer_API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/csv-transformer-api"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false

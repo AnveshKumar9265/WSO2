@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="mi-artifact-file-source" xmlns="http://ws.apache.org/ns/synapse">
+  <file.init>
+    <connectionType>LOCAL</connectionType>
+    <workingDir>C:/Users/hp/Downloads</workingDir>
+    <fileLockScheme>Local</fileLockScheme>
+    <fileCacheEnabled>true</fileCacheEnabled>
+    <suspendOnConnectionFailure>true</suspendOnConnectionFailure>
+    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+    <suspendInitialDuration>1000</suspendInitialDuration>
+    <suspendProgressionFactor>1.0</suspendProgressionFactor>
+    <suspendMaximumDuration>300000</suspendMaximumDuration>
+    <name>mi-artifact-file-source</name>
+  </file.init>
+</localEntry>
