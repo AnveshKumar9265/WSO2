@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/aes_encrypt_decrypt" name="AESCrypto_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/encrypt">
+        <inSequence>
+        <property name="EncryptedText" expression="json-eval($)"/>
+        <property name="SecretKey" value="1234567890123456"/>
+        <log>
+            <property name="EncryptedText" expression="get-property('EncryptedText')"/>
+            <property name="SecretKey" value="12345678901234567890123456789012"/>
+        </log>
+        <class name="com.example.wso2.mediators.EncryptMediator">
+        <property name="originalText" expression="get-property('EncryptedText')"/>
+        <property name="secretKey" expression="get-property('SecretKey')"/>
+        </class>
+        <property expression="$ctx:ENCRYPTED_PAYLOAD" name="Encrypted_Resp"/>
+        <log level="custom">
+            <property expression="$ctx:ENCRYPTED_PAYLOAD" name="Encrypted_Resp"/>
+        </log>
+        <payloadFactory media-type="json">
+            <format>{
+                "data": "$1",
+                "Key": "$2"
+                }
+            </format>
+        <args>
+            <arg evaluator="json"  expression="$ctx:ENCRYPTED_PAYLOAD"/>
+            <arg evaluator="xml" expression="get-property('SecretKey')" />
+        </args>
+        </payloadFactory>
+        <respond />
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" url-mapping="/decrypt">
+        <inSequence>
+        <property name="ENCRYPTED_PAYLOAD" expression="json-eval($.data)"/>
+        <property name="Secret_Key" expression="json-eval($.Key)"/>
+        <log>
+            <property name="ENCRYPTED_PAYLOAD" expression="get-property('ENCRYPTED_PAYLOAD')"/>
+            <property name="Secret_Key" expression="get-property('Secret_Key')"/>
+        </log>
+        <class name="com.example.wso2.mediators.DecryptMediator">
+        <property name="EncryptedText" expression="$ctx:ENCRYPTED_PAYLOAD"/>
+        <property name="SecretKey" expression="$ctx:Secret_Key"/>
+        </class>
+        <property expression="$ctx:DECRYPTED_PAYLOAD" name="Decrypted_Resp"/>
+        <log level="custom">
+            <property expression="$ctx:DECRYPTED_PAYLOAD" name="Decrypted_Resp"/>
+        </log>
+        <payloadFactory media-type="json">
+            <format>{
+                "data": $1,
+                "Key": "$2"
+                }
+            </format>
+        <args>
+            <arg evaluator="json"  expression="$ctx:DECRYPTED_PAYLOAD"/>
+            <arg evaluator="xml" expression="get-property('Secret_Key')" />
+        </args>
+        </payloadFactory>
+        <respond />
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+</api>

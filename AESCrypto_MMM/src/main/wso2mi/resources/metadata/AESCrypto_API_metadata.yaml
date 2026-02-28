@@ -1,0 +1,10 @@
+---
+key: "AESCrypto_API-1.0.0"
+name : "AESCrypto_API"
+displayName : "AESCrypto_API"
+description: "AESCrypto_API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/aes_encrypt_decrypt"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false

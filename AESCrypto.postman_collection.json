@@ -1,0 +1,408 @@
+{
+  "info": {
+    "_postman_id": "3ecdd085-a533-4716-b35e-7121d31b605b",
+    "name": "AESCrypto",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19639648"
+  },
+  "item": [
+    {
+      "name": "https://localhost:8253/aes_encrypt_decrypt/decrypt",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"data\": \"q9OLDlwi+BcOXG7DowUTiVydGGq/kyU1iYm1tzAKH3kgjlPlNTyILH0SSs/It0J4P82OIAnBOaFcvz1nrx8U6qk4pIIFFqFH\",\r\n    \"Key\": \"1234567890123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:8253/aes_encrypt_decrypt/decrypt",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "8253",
+          "path": [
+            "aes_encrypt_decrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "https://localhost:8253/aes_encrypt_decrypt/decrypt",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"data\": \"q9OLDlwi+BcOXG7DowUTiVydGGq/kyU1iYm1tzAKH3kgjlPlNTyILH0SSs/It0J4P82OIAnBOaFcvz1nrx8U6qk4pIIFFqFH\",\r\n    \"Key\": \"1234567890123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8253/aes_encrypt_decrypt/decrypt",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8253",
+              "path": [
+                "aes_encrypt_decrypt",
+                "decrypt"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "activityid",
+              "value": "cee3f21e-e4a8-42bf-a142-02d3c20ae6a5"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "POST"
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8253"
+            },
+            {
+              "key": "Postman-Token",
+              "value": "6c284988-6412-40e0-be15-dcce5596244e"
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 09:29:23 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"name\": \"Anvesh\",\n        \"age\": \"28\"\n    },\n    \"Key\": \"1234567890123456\"\n}"
+        },
+        {
+          "name": "https://localhost:8253/aes_encrypt_decrypt/decrypt",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"data\": \"ZCMOA1onhCiaeG5ZtV7F4J+A8Vd7clVHfBQHQPPT35ccjjf71o/w7YwfGXikY6nmFv2T7r417KTks+e+urKY7zS8c2nkFMvmBPpqem7UZxgv8hXmRR0P8voB3QTHGjRd6SV6pyuaU/VCPu4J79YXRYpejGsoZgrf5gNMUy3EawQ0gf/IisTh+EGCsae/8j/Z/kXOsiGEU5ZYqgjlz5qXqFqHjGjPcjErZeEme3QMo/60lCaNZlliQHIeE4SiHBfCvwvMDq6uX3+mPCG+P/ApLt0nk2/ZqbEwllglVU0YyKD3IP3QXV++RVZwD3VOR3d3aYgZO9gOV0TST5WEFwgQQydOaVmbx8dRFrVlZLCNOhIbU4eE5g1Rkyq5lXXVR8IK4jyh03iCPL50G2tEUCh9Rz/I86SHZx3tGNrQe/L7eh8sR+iY+nfFmifBhus7gX/+c1HH3NBHoLhVsWLozO49B7tkdpghHekate5QJDRfpJU2VfUSh5orPguKCtx9ez1TM8qCicCoOOC/0ElTatM5csgzJyz33rnYaGFezIFt7BTGLLEtx7t+VFitTmR2inoLDFN29mLYb72bZyI8yV+hBZpaHSpytkgcYvbqQzX1JDH0ZWlv8Lpgxuh+dOtlZZIjAvb8mOiSkliVZkzaV/eUsuV1v/sZl0eAlgf/0hUfzBFZJjCouPVsut6OMAC4aw9sE7lbOlWkBYLYoqMzikaIVzetyOqoOhc/e5PKP5ErAwNB6Afg21lg89e039W46Kc9HHn/qTpADeRGzBkIDnSyPFlpa0n7ECR4DvqPofIzeY3G77X6croeOIom49atot56A4XykVn2ay7BxrHf1hxK1ZZ6qvfxcjUK8m0xY0cYWAcm\",\r\n    \"Key\": \"1234567890123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8253/aes_encrypt_decrypt/decrypt",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8253",
+              "path": [
+                "aes_encrypt_decrypt",
+                "decrypt"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "activityid",
+              "value": "b257b80a-202f-478a-aa68-9a2a830de62e"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "POST"
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8253"
+            },
+            {
+              "key": "Postman-Token",
+              "value": "a7d71b5a-d446-49a1-9b4d-f26a39e8e11e"
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 09:32:40 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"userId\": 30005738,\n        \"name\": \"Anvesh Kumar\",\n        \"email\": \"anveshkumar@example.com\",\n        \"roles\": [\n            \"ADMIN\",\n            \"USER\"\n        ],\n        \"settings\": {\n            \"theme\": \"dark\",\n            \"notifications\": true,\n            \"language\": \"en-US\"\n        },\n        \"transactions\": [\n            {\n                \"id\": 1,\n                \"amount\": 250.75,\n                \"date\": \"2026-01-13\"\n            },\n            {\n                \"id\": 2,\n                \"amount\": 75,\n                \"date\": \"2026-01-12\"\n            },\n            {\n                \"id\": 3,\n                \"amount\": 500,\n                \"date\": \"2026-01-10\"\n            }\n        ]\n    },\n    \"Key\": \"1234567890123456\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "https://localhost:8253/aes_encrypt_decrypt/encrypt",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Anvesh\",\r\n    \"age\": \"28\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:8253/aes_encrypt_decrypt/encrypt",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "8253",
+          "path": [
+            "aes_encrypt_decrypt",
+            "encrypt"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "https://localhost:8253/aes_encrypt_decrypt/encrypt",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Anvesh\",\r\n    \"age\": \"28\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8253/aes_encrypt_decrypt/encrypt",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8253",
+              "path": [
+                "aes_encrypt_decrypt",
+                "encrypt"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "activityid",
+              "value": "79246bdc-8698-449c-bfae-cbbf9e497896"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "POST"
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8253"
+            },
+            {
+              "key": "Postman-Token",
+              "value": "c936384b-9747-4c4c-8378-7a882ba57914"
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 09:24:36 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": \"q9OLDlwi+BcOXG7DowUTiVydGGq/kyU1iYm1tzAKH3kgjlPlNTyILH0SSs/It0J4P82OIAnBOaFcvz1nrx8U6qk4pIIFFqFH\",\n    \"Key\": \"1234567890123456\"\n}"
+        },
+        {
+          "name": "https://localhost:8253/aes_encrypt_decrypt/encrypt",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": 30005738,\r\n    \"name\": \"Anvesh Kumar\",\r\n    \"email\": \"anveshkumar@example.com\",\r\n    \"roles\": [\r\n        \"ADMIN\",\r\n        \"USER\"\r\n    ],\r\n    \"settings\": {\r\n        \"theme\": \"dark\",\r\n        \"notifications\": true,\r\n        \"language\": \"en-US\"\r\n    },\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"amount\": 250.75,\r\n            \"date\": \"2026-01-13\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"amount\": 75.00,\r\n            \"date\": \"2026-01-12\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"amount\": 500.00,\r\n            \"date\": \"2026-01-10\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8253/aes_encrypt_decrypt/encrypt",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8253",
+              "path": [
+                "aes_encrypt_decrypt",
+                "encrypt"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "activityid",
+              "value": "972d47b8-dcb4-4a20-85b4-0f394392037e"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "POST"
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8253"
+            },
+            {
+              "key": "Postman-Token",
+              "value": "01853953-a0ee-4ef9-a1d4-c2ba63d2578b"
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 09:32:28 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": \"ZCMOA1onhCiaeG5ZtV7F4J+A8Vd7clVHfBQHQPPT35ccjjf71o/w7YwfGXikY6nmFv2T7r417KTks+e+urKY7zS8c2nkFMvmBPpqem7UZxgv8hXmRR0P8voB3QTHGjRd6SV6pyuaU/VCPu4J79YXRYpejGsoZgrf5gNMUy3EawQ0gf/IisTh+EGCsae/8j/Z/kXOsiGEU5ZYqgjlz5qXqFqHjGjPcjErZeEme3QMo/60lCaNZlliQHIeE4SiHBfCvwvMDq6uX3+mPCG+P/ApLt0nk2/ZqbEwllglVU0YyKD3IP3QXV++RVZwD3VOR3d3aYgZO9gOV0TST5WEFwgQQydOaVmbx8dRFrVlZLCNOhIbU4eE5g1Rkyq5lXXVR8IK4jyh03iCPL50G2tEUCh9Rz/I86SHZx3tGNrQe/L7eh8sR+iY+nfFmifBhus7gX/+c1HH3NBHoLhVsWLozO49B7tkdpghHekate5QJDRfpJU2VfUSh5orPguKCtx9ez1TM8qCicCoOOC/0ElTatM5csgzJyz33rnYaGFezIFt7BTGLLEtx7t+VFitTmR2inoLDFN29mLYb72bZyI8yV+hBZpaHSpytkgcYvbqQzX1JDH0ZWlv8Lpgxuh+dOtlZZIjAvb8mOiSkliVZkzaV/eUsuV1v/sZl0eAlgf/0hUfzBFZJjCouPVsut6OMAC4aw9sE7lbOlWkBYLYoqMzikaIVzetyOqoOhc/e5PKP5ErAwNB6Afg21lg89e039W46Kc9HHn/qTpADeRGzBkIDnSyPFlpa0n7ECR4DvqPofIzeY3G77X6croeOIom49atot56A4XykVn2ay7BxrHf1hxK1ZZ6qvfxcjUK8m0xY0cYWAcm\",\n    \"Key\": \"1234567890123456\"\n}"
+        }
+      ]
+    }
+  ]
+}
